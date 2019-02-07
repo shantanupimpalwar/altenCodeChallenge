@@ -11,25 +11,22 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Customer")
 public class Customer {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "CUSTOMERID")
 	private int customerId;
-    @Column(name = "CUSTOMERNAME")
     private String customerName;
-    @Column(name = "ADDRESS")
     private String address;
     
-    @OneToMany(mappedBy = "customerId")
-    private List<Vehicle> vehicles = new ArrayList<Vehicle>();
+	/*
+	 * @OneToMany(mappedBy = "customerId") private List<Vehicle> vehicles = new
+	 * ArrayList<Vehicle>();
+	 */
     
-    public List<Vehicle> getVehicles() {
-		return vehicles;
-	}
-
+	/*
+	 * public List<Vehicle> getVehicles() { return vehicles; }
+	 */
 	public int getCustomerId() {
 		return customerId;
 	}

@@ -7,8 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import com.alten.code.challenge.altenCodeChallenge.entity.Vehicle;
 
-@Repository
-public interface VehicleRepository extends JpaRepository<Vehicle, String>{
-	
-	List<Vehicle> findByVehicleId(String vehicleId);
-}
+/*
+ * @Repository public interface VehicleRepository extends JpaRepository<Vehicle,
+ * String>{
+ * 
+ * List<Vehicle> findByVehicleId(String vehicleId); }
+ */

@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 import com.alten.code.challenge.altenCodeChallenge.service.VehicleCustomerDetailsService;
 //@ComponentScan("com.alten.code.challenge.altenCodeChallenge")
 @SpringBootApplication
-public class AltenCodeChallengeApplication implements CommandLineRunner {
+public class AltenCodeChallengeApplication{
 
 	@Autowired
 	VehicleCustomerDetailsService vehicleCustomerDetailsService; 
@@ -20,15 +20,6 @@ public class AltenCodeChallengeApplication implements CommandLineRunner {
 		SpringApplication.run(AltenCodeChallengeApplication.class, args);
 	}
 	
-	@Override
-	public void run(String... arg0) throws Exception {
-		 List<String> vehicles = vehicleCustomerDetailsService.getAllVehicles("YS2R4X20005399401");
-	        for(String vehicle : vehicles)
-	        {
-	            System.out.println("Introducing Barca player => " + vehicle);
-	        }
-		
-	}
-
+	
 }
 
