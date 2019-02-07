@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import com.alten.code.challenge.altenCodeChallenge.entity.Customer;
 import com.alten.code.challenge.altenCodeChallenge.entity.Vehicle;
 
 import com.alten.code.challenge.altenCodeChallenge.service.VehicleCustomerDetailsService;
@@ -33,10 +34,12 @@ public class VehicleCustomerDetailsServiceImpl implements VehicleCustomerDetails
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	public void getVehical(Vehicle vehicle)
+	public void getVehical()
 	{
-		entityManager.persist(vehicle);
-		System.out.println("###"+ vehicle.getRegistrationNo());
+		Customer customer = entityManager.find(Customer.class, 1);
+		Vehicle vehicle2 = entityManager.find(Vehicle.class, 1);
+		System.out.println("###"+ vehicle2.getRegistrationNo());
+		System.out.println("###"+ customer.getCustomerName());
 	}
 	
 	

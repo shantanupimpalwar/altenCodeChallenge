@@ -18,6 +18,7 @@ public class AltenCodeChallengeApplication{
 	
 	public static void main(String[] args) {
 		SpringApplication.run(AltenCodeChallengeApplication.class, args);
+		//System.out.println("&&&&&&&&&&&&&&&&&&&&&");
 	}
 	
 	

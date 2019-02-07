@@ -1,18 +1,23 @@
 package com.alten.code.challenge.altenCodeChallenge.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
+
 
 
 @Entity
+@NamedQuery(query = "select u from Vehicle u", name = "query_find_all_vehicle")
 public class Vehicle {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQUENCE1")
+	@SequenceGenerator(name="SEQUENCE1", sequenceName="SEQUENCE1", allocationSize=1)
+	private int vID;
+	
 	private String vehicleID;
 	
     private String registrationNo;
@@ -41,11 +46,11 @@ public class Vehicle {
 	public void setRegistrationNo(String registrationNo) {
 		this.registrationNo = registrationNo;
 	}
-	public Vehicle(String vehicleID, String registrationNo) {
-		super();
-		this.vehicleID = vehicleID;
-		this.registrationNo = registrationNo;
-	}
+//	public Vehicle(String vehicleID, String registrationNo) {
+//		super();
+//		this.vehicleID = vehicleID;
+//		this.registrationNo = registrationNo;
+//	}
 	public char getStatus() {
 		return status;
 	}
